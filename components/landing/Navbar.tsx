@@ -302,18 +302,7 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            {/* CTA Button */}
-                            <Link
-                                href="/send-package"
-                                className="mt-6 flex items-center justify-center gap-2 w-full bg-gradient-to-r from-[#2040B0] to-[#2850D0] text-white font-medium py-3 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Get Started
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M5 12h14"></path>
-                                    <path d="m12 5 7 7-7 7"></path>
-                                </svg>
-                            </Link>
+
 
                             {/* Mobile menu decorative element */}
                             <div className="mt-8 mx-2 p-5 rounded-xl bg-gradient-to-br from-[#2040B0]/5 to-[#2040B0]/10">
