@@ -39,7 +39,7 @@ const Footer = () => {
                                 <Image src="/logo.png" alt="logo" width={40} height={40}/>
                             </div>
                             <div>
-                                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 bg-clip-text text-transparent">
+                                <h3 className="text-2xl font-semibold bg-black bg-clip-text text-transparent">
                                     Delemate
                                 </h3>
                             </div>
