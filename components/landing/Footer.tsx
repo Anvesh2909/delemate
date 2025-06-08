@@ -68,9 +68,8 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold text-slate-800 mb-4">Quick Links</h4>
                         <ul className="space-y-2">
                             {[
-                                { name: 'About Us', href: '/about', icon: MdInfo },
-                                { name: 'Blogs', href: '/blogs', icon: MdDescription },
-                                { name: 'Others', href: '/others', icon: MdOutlinePrivacyTip },
+                                { name: 'About Us', href: '/about-us', icon: MdInfo },
+                                { name: 'Send Package', href: '/send-package', icon: MdDescription },
                                 { name: 'Contact', href: '/contact', icon: MdEmail }
                             ].map((link, i) => (
                                 <li key={i}>
@@ -91,10 +90,9 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold text-slate-800 mb-4">Legal</h4>
                         <ul className="space-y-2">
                             {[
-                                { name: 'Terms of Service', href: '/terms' },
-                                { name: 'Privacy Policy', href: '/privacy' },
-                                { name: 'Cookie Policy', href: '/cookies' },
-                                { name: 'FAQ', href: '/faq' }
+                                { name: 'Terms & Conditions', href: '/terms-and-conditions' },
+                                { name: 'Privacy Policy', href: '/privacy-policy' },
+                                { name: 'Refund Policy', href: '/refund-policy' }
                             ].map((link, i) => (
                                 <li key={i}>
                                     <Link
