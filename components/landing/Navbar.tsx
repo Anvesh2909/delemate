@@ -77,27 +77,22 @@ const Navbar = () => {
             }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center">
-                        {/* Logo Section */}
+                        {/* Logo Section - Enhanced to match the logo */}
                         <div className="flex items-center">
-                            <Link href="/" className="flex items-center space-x-2 group">
+                            <Link href="/public" className="flex items-center space-x-2 group">
                                 <div className="h-10 w-10 relative transition-transform duration-200 group-hover:scale-110">
-                                    <Image
-                                        src="/logo.png"
-                                        alt="Delemate Logo"
-                                        fill
-                                        className="object-contain"
-                                        priority
-                                    />
+                                    {/* Logo container with specific styling to match the blue theme */}
+                                    <Image src="/logo.png" alt="logo" width={50} height={50}/>
                                 </div>
                                 <span className={`font-semibold text-lg transition-opacity duration-300 ${
-                                    scrolled ? 'text-slate-800' : 'text-slate-900'
+                                    scrolled ? 'text-black' : 'text-black'
                                 }`}>
                                     Delemate
                                 </span>
                             </Link>
                         </div>
 
-                        {/* Desktop Navigation */}
+                        {/* Desktop Navigation - Updated colors to match logo */}
                         <div className="hidden md:flex items-center space-x-1">
                             {navLinks.map((link) => {
                                 const isActive = pathname === link.href || pathname.startsWith(link.href);
@@ -109,29 +104,29 @@ const Navbar = () => {
                                         href={link.href}
                                         className={`group flex items-center gap-2 font-medium text-sm px-4 py-2.5 rounded-xl transition-all duration-300 ${
                                             isActive
-                                                ? 'text-blue-700 bg-white/30 backdrop-blur-md shadow-sm'
-                                                : `${scrolled ? 'text-slate-600' : 'text-slate-700'} hover:text-blue-600 hover:bg-white/20 hover:backdrop-blur-md`
+                                                ? 'text-[#2040B0] bg-white/30 backdrop-blur-md shadow-sm'
+                                                : `${scrolled ? 'text-slate-600' : 'text-slate-700'} hover:text-[#2040B0] hover:bg-white/20 hover:backdrop-blur-md`
                                         }`}
                                     >
                                         <Icon size={16} className={`transition-colors duration-200 ${
                                             isActive
-                                                ? 'text-blue-500'
-                                                : 'text-slate-400 group-hover:text-blue-500'
+                                                ? 'text-[#2040B0]'
+                                                : 'text-slate-400 group-hover:text-[#2040B0]'
                                         }`} />
                                         <span className="relative">
                                             {link.name}
                                             {isActive && (
-                                                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 rounded-full" />
+                                                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#2040B0] rounded-full" />
                                             )}
                                         </span>
                                     </Link>
                                 );
                             })}
 
-                            {/* Action Button */}
+                            {/* Action Button - Updated with logo blue */}
                             <Link
                                 href="/send-package"
-                                className="ml-2 flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5"
+                                className="ml-2 flex items-center gap-1.5 bg-gradient-to-r from-[#2040B0] to-[#2850D0] hover:from-[#1a3699] hover:to-[#2346b8] text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5"
                             >
                                 Get Started
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-0.5">
@@ -141,14 +136,14 @@ const Navbar = () => {
                             </Link>
                         </div>
 
-                        {/* Mobile menu button */}
+                        {/* Mobile menu button - Updated colors */}
                         <div className="md:hidden flex items-center">
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                                 className={`transition-colors duration-300 focus:outline-none p-2 rounded-xl ${
                                     scrolled
-                                        ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50/70'
-                                        : 'text-slate-800 hover:text-blue-600 hover:bg-white/20 backdrop-blur-md'
+                                        ? 'text-slate-700 hover:text-[#2040B0] hover:bg-blue-50/70'
+                                        : 'text-slate-800 hover:text-[#2040B0] hover:bg-white/20 backdrop-blur-md'
                                 }`}
                                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                                 aria-expanded={isMenuOpen}
@@ -159,35 +154,30 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {/* Mobile menu - Sliding panel */}
+                {/* Mobile menu - Updated with logo blue theme */}
                 <div
-                    className={`md:hidden fixed inset-y-0 right-0 w-[300px] bg-white/60 backdrop-blur-2xl z-50 shadow-2xl shadow-blue-500/10 transform transition-transform duration-500 ease-out ${
+                    className={`md:hidden fixed inset-y-0 right-0 w-[300px] bg-white/60 backdrop-blur-2xl z-50 shadow-2xl shadow-[#2040B0]/10 transform transition-transform duration-500 ease-out ${
                         isMenuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
                 >
                     <div className="flex flex-col h-full">
-                        {/* Mobile Menu Header */}
-                        <div className="p-6 border-b border-blue-100/50 flex items-center justify-between bg-gradient-to-r from-blue-50/50 to-transparent">
-                            <Link href="/" className="flex items-center space-x-3" onClick={() => setIsMenuOpen(false)}>
-                                <div className="h-8 w-8 relative">
-                                    <Image
-                                        src="/logo.png"
-                                        alt="Delemate Logo"
-                                        fill
-                                        className="object-contain"
-                                    />
+                        {/* Mobile Menu Header - Updated to match logo */}
+                        <div className="p-6 border-b border-[#2040B0]/10 flex items-center justify-between bg-gradient-to-r from-[#2040B0]/5 to-transparent">
+                            <Link href="/public" className="flex items-center space-x-3" onClick={() => setIsMenuOpen(false)}>
+                                <div className="h-8 w-8 relative bg-[#2040B0] rounded-md flex items-center justify-center">
+                                    <span className="text-white font-bold text-xl">D</span>
                                 </div>
-                                <span className="font-semibold text-slate-800">Delemate</span>
+                                <span className="font-semibold text-[#2040B0]">Delemate</span>
                             </Link>
                             <button
                                 onClick={() => setIsMenuOpen(false)}
-                                className="p-2 rounded-full bg-blue-50/80 hover:bg-blue-100/80 transition-colors duration-200 text-slate-500 hover:text-blue-600"
+                                className="p-2 rounded-full bg-[#2040B0]/5 hover:bg-[#2040B0]/10 transition-colors duration-200 text-slate-500 hover:text-[#2040B0]"
                             >
                                 <X size={20} />
                             </button>
                         </div>
 
-                        {/* Mobile Menu Links */}
+                        {/* Mobile Menu Links - Updated colors */}
                         <div className="flex-1 overflow-y-auto py-6 px-4">
                             <div className="space-y-3">
                                 {navLinks.map((link) => {
@@ -200,24 +190,24 @@ const Navbar = () => {
                                             href={link.href}
                                             className={`flex items-center px-4 py-3.5 rounded-xl transition-all duration-200 ${
                                                 isActive
-                                                    ? 'text-blue-700 bg-blue-50/80 border border-blue-200/30 shadow-sm'
-                                                    : 'text-slate-600 hover:text-blue-600 hover:bg-blue-50/50'
+                                                    ? 'text-[#2040B0] bg-[#2040B0]/5 border border-[#2040B0]/10 shadow-sm'
+                                                    : 'text-slate-600 hover:text-[#2040B0] hover:bg-[#2040B0]/5'
                                             }`}
                                             onClick={() => setIsMenuOpen(false)}
                                         >
                                             <div className="flex items-center gap-3.5 w-full">
                                                 <div className={`p-2.5 rounded-lg transition-colors duration-200 ${
                                                     isActive
-                                                        ? 'bg-blue-100/80 border border-blue-200/30'
-                                                        : 'bg-slate-100/70 group-hover:bg-blue-100/60'
+                                                        ? 'bg-[#2040B0]/10 border border-[#2040B0]/20'
+                                                        : 'bg-slate-100/70 group-hover:bg-[#2040B0]/10'
                                                 }`}>
                                                     <Icon size={18} className={
-                                                        isActive ? 'text-blue-500' : 'text-slate-400'
+                                                        isActive ? 'text-[#2040B0]' : 'text-slate-400'
                                                     } />
                                                 </div>
                                                 <span className="font-medium text-base">{link.name}</span>
                                                 {isActive && (
-                                                    <div className="ml-auto w-2 h-2 bg-blue-500 rounded-full"></div>
+                                                    <div className="ml-auto w-2 h-2 bg-[#2040B0] rounded-full"></div>
                                                 )}
                                             </div>
                                         </Link>
@@ -225,10 +215,10 @@ const Navbar = () => {
                                 })}
                             </div>
 
-                            {/* CTA Button */}
+                            {/* CTA Button - Updated with logo blue */}
                             <Link
                                 href="/send-package"
-                                className="mt-6 flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5"
+                                className="mt-6 flex items-center justify-center gap-2 w-full bg-gradient-to-r from-[#2040B0] to-[#2850D0] text-white font-medium py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#2040B0]/20 hover:-translate-y-0.5"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Get Started
@@ -238,11 +228,11 @@ const Navbar = () => {
                                 </svg>
                             </Link>
 
-                            {/* Mobile menu decorative element */}
-                            <div className="mt-8 mx-2 p-5 rounded-xl bg-gradient-to-br from-blue-50/80 to-blue-100/40 border border-blue-200/20 backdrop-blur-sm">
+                            {/* Mobile menu decorative element - Updated colors */}
+                            <div className="mt-8 mx-2 p-5 rounded-xl bg-gradient-to-br from-[#2040B0]/5 to-[#2040B0]/10 border border-[#2040B0]/10 backdrop-blur-sm">
                                 <div className="flex items-center gap-2 mb-3">
-                                    <Sparkles size={16} className="text-blue-500" />
-                                    <div className="text-xs uppercase text-blue-600 font-semibold tracking-wider">Delemate</div>
+                                    <Sparkles size={16} className="text-[#2040B0]" />
+                                    <div className="text-xs uppercase text-[#2040B0] font-semibold tracking-wider">Delemate</div>
                                 </div>
                                 <div className="text-sm text-slate-600 leading-relaxed">
                                     Smart delivery through community—faster, safer, more affordable.
@@ -255,7 +245,7 @@ const Navbar = () => {
                 {/* Overlay for mobile menu */}
                 {isMenuOpen && (
                     <div
-                        className="md:hidden fixed inset-0 bg-blue-900/10 backdrop-blur-sm z-40"
+                        className="md:hidden fixed inset-0 bg-[#2040B0]/5 backdrop-blur-sm z-40"
                         onClick={() => setIsMenuOpen(false)}
                     />
                 )}
