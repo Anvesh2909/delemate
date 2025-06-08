@@ -15,7 +15,6 @@ import {
     MdCheckCircle,
     MdPlayArrow,
     MdVerifiedUser,
-
 } from 'react-icons/md';
 import {
     FiPackage,
@@ -102,10 +101,10 @@ const Hero: React.FC = () => {
                                 <span className="block">
                                     <span className="text-slate-900">Through </span>
                                     <span className="relative inline-block">
-                                        <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+                                        <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
                                             Community
                                         </span>
-                                        <div className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-full -skew-x-12" />
+                                        <div className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/20 to-blue-400/20 rounded-full -skew-x-12" />
                                     </span>
                                 </span>
                             </h1>
@@ -158,12 +157,12 @@ const Hero: React.FC = () => {
                     {/* Right Column - Visual Element */}
                     <div className={`relative ${isVisible ? 'animate-fade-in-right' : 'opacity-0'}`}>
                         <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-3xl blur-3xl transform rotate-6" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-400/10 rounded-3xl blur-3xl transform rotate-6" />
 
                             {/* Main delivery interface mockup */}
                             <div className="relative bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
                                 {/* Header */}
-                                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
+                                <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <h3 className="text-lg font-semibold">Active Delivery</h3>
@@ -208,7 +207,7 @@ const Hero: React.FC = () => {
                                     </div>
 
                                     {/* Action Button */}
-                                    <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                                    <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
                                         <MdPlayArrow size={18} />
                                         Track Live
                                     </button>
