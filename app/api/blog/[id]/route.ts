@@ -3,12 +3,12 @@ import { Blog } from "@/models/blog";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
-    request: Request,
-    { params }: { params: { id: string } }
+    request: NextRequest,
+    context: { params: { id: string } }
 ) {
     try {
         await connectDB();
-        const blog = await Blog.findById(params.id);
+        const blog = await Blog.findById(context.params.id);
 
         if (!blog) {
             return NextResponse.json({ error: "Blog not found" }, { status: 404 });
@@ -26,12 +26,12 @@ export async function GET(
 
 export async function PUT(
     req: NextRequest,
-    { params }: { params: { id: string } }
+    context: { params: { id: string } }
 ) {
     try {
         await connectDB();
         const body = await req.json();
-        const updatedBlog = await Blog.findByIdAndUpdate(params.id, body, { new: true });
+        const updatedBlog = await Blog.findByIdAndUpdate(context.params.id, body, { new: true });
 
         if (!updatedBlog) {
             return NextResponse.json({ error: "Blog not found" }, { status: 404 });
@@ -48,11 +48,11 @@ export async function PUT(
 
 export async function DELETE(
     req: NextRequest,
-    { params }: { params: { id: string } }
+    context: { params: { id: string } }
 ) {
     try {
         await connectDB();
-        const deletedBlog = await Blog.findByIdAndDelete(params.id);
+        const deletedBlog = await Blog.findByIdAndDelete(context.params.id);
 
         if (!deletedBlog) {
             return NextResponse.json({ error: "Blog not found" }, { status: 404 });
